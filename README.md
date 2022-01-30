@@ -34,3 +34,23 @@ const updateCountdown = (e) => {
 // Event Listeners
 countdownForm.addEventListener("submit", updateCountdown);
 ```
+
+## Populate Countdown
+```javascript
+const second = 1000;
+const minute = second + 60;
+const hour = minute + 60;
+const day = hour * 24;
+// Populate Countdown / Complete UI
+const updateDom = () => {
+  const now = new Date().getTime();
+  const distance = countdownValue - now;
+  console.log("distance", distance);
+
+  const days = Math.floor(distance / day);
+  const hours = Math.floor((distance % day) / hour);
+  const minutes = Math.floor((distance % hour) / minute);
+  const seconds = Math.floor((distance % minute) / second);
+  console.log(days, hours, minutes, seconds);
+};
+```
