@@ -54,3 +54,25 @@ const updateDom = () => {
   console.log(days, hours, minutes, seconds);
 };
 ```
+
+
+## Get Values from the Form Inputs (REV)
+```javascript
+let countdownTitle = "";
+let countdownDate = "";
+let countdownValue = Date;
+// Take Values from Form Input
+const updateCountdown = (e) => {
+  e.preventDefault();
+  countdownTitle = e.srcElement[0].value;
+  countdownDate = e.srcElement[1].value;
+  console.log(countdownTitle, countdownDate);
+
+  // Get number version of current Date, updateDEOM
+  countdownValue = new Date(countdownDate).getTime();
+  console.log("countdown value:", countdownValue);
+
+  // Update Dom
+  updateDom();
+};
+```
