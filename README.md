@@ -17,3 +17,20 @@ const dateEl = document.getElementById("date-picker");
 let today = new Date().toISOString().split("T")[0];
 dateEl.setAttribute("min", today);
 ```
+
+## Get Values from the Form Inputs
+```javascript
+let countdownTitle = "";
+let countdownDate = "";
+// Take Values from Form Input
+const updateCountdown = (e) => {
+  e.preventDefault();
+  countdownTitle = e.srcElement[0].value;
+  countdownDate = e.srcElement[1].value;
+  console.log(countdownTitle, countdownDate);
+  
+};
+
+// Event Listeners
+countdownForm.addEventListener("submit", updateCountdown);
+```
