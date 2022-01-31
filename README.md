@@ -76,3 +76,33 @@ const updateCountdown = (e) => {
   updateDom();
 };
 ```
+
+## Update Countdown Timer With setInterval
+```javascript
+const updateDom = () => {
+  countdownActive = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = countdownValue - now;
+    console.log("distance", distance);
+
+    const days = Math.floor(distance / day);
+    console.log(days);
+    const hours = Math.floor((distance % day) / hour);
+    const minutes = Math.floor((distance % hour) / minute);
+    const seconds = Math.floor((distance % minute) / second);
+    console.log(days, hours, minutes, seconds);
+
+    // Populate Countdown
+    countdownElTitle.textContent = `${countdownTitle}`;
+    tiemElements[0].textContent = `${days}`;
+    tiemElements[1].textContent = `${hours}`;
+    tiemElements[2].textContent = `${minutes}`;
+    tiemElements[3].textContent = `${seconds}`;
+
+    // Hide Input
+    inputContainer.hidden = true;
+    // Show Countdown
+    countdownEl.hidden = false;
+  }, 1000);
+};
+```
