@@ -57,12 +57,21 @@ const updateCountdown = (e) => {
   countdownDate = e.srcElement[1].value;
   //console.log(countdownTitle, countdownDate);
 
-  // Get number version of current Date, updateDEOM
-  countdownValue = new Date(countdownDate).getTime();
-  //console.log("countdown value:", countdownValue);
+  // Check for valid date
+  if (countdownDate === "" && countdownTitle == "") {
+    alert("Please Enter a Title and Select a Date");
+  } else if (countdownTitle == "") {
+    alert("Please Enet a Title");
+  } else if (countdownDate === "") {
+    alert("Please Select a Date");
+  } else {
+    // Get number version of current Date, updateDEOM
+    countdownValue = new Date(countdownDate).getTime();
+    console.log("countdown value:", countdownValue);
 
-  // Update Dom
-  updateDom();
+    // Update Dom
+    updateDom();
+  }
 };
 
 // Reset All Values

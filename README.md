@@ -106,3 +106,29 @@ const updateDom = () => {
   }, 1000);
 };
 ```
+## Check Conditions If Timer Info Has Been Filled Out
+```javascript
+// Take Values from Form Input
+const updateCountdown = (e) => {
+  e.preventDefault();
+  countdownTitle = e.srcElement[0].value;
+  countdownDate = e.srcElement[1].value;
+  //console.log(countdownTitle, countdownDate);
+
+  // Check for valid date
+  if (countdownDate === "" && countdownTitle == "") {
+    alert("Please Enter a Title and Select a Date");
+  } else if (countdownTitle == "") {
+    alert("Please Enet a Title");
+  } else if (countdownDate === "") {
+    alert("Please Select a Date");
+  } else {
+    // Get number version of current Date, updateDEOM
+    countdownValue = new Date(countdownDate).getTime();
+    console.log("countdown value:", countdownValue);
+
+    // Update Dom
+    updateDom();
+  }
+};
+```
