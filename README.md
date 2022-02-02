@@ -132,3 +132,18 @@ const updateCountdown = (e) => {
   }
 };
 ```
+## Reset Function
+```javascript
+// Reset All Values
+const reset = () => {
+  // Hide Countdowns, Show Input
+  countdownEl.hidden = true;
+  completeEl.hidden = true;
+  inputContainer.hidden = false;
+  // Stop the Countdown
+  clearInterval(countdownActive);
+  // Reset the values
+  countdownTitle = "";
+  countdownDate = "";
+};
+```

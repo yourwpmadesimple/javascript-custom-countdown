@@ -48,7 +48,7 @@ video {
   padding: 25px 50px;
   border-radius: 5px;
   z-index: 2;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.6);
   display: flex;
   justify-content: center;
 }
@@ -103,6 +103,11 @@ button {
 button:hover {
   -webkit-filter: brightness(110%);
           filter: brightness(110%);
+}
+#error-message {
+  text-align: center;
+  color: darkred;
+  font-size: 3vw;
 }
 
 /* Countdown */
